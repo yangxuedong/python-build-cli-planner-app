@@ -55,7 +55,7 @@ def backup_reminders_csv():
 
 # === TASK 1 ========================================================================
 
-@pytest.mark.task_1_regular_class_implementation
+@pytest.mark.test_task_1_regular_class_implementation
 def test_task_1_regular_class_implementation():
     assert hasattr(reminder, 'PoliteReminder'), \
         'You should implement class `PoliteReminder` in reminder.py'
@@ -72,7 +72,7 @@ def test_task_1_regular_class_implementation():
 
 # === TASK 2 ========================================================================
 
-@pytest.mark.task_2_overriding_text
+@pytest.mark.test_task_2_overriding_text
 def test_task_2_overriding_text():
     test_task_1_regular_class_implementation()
 
@@ -84,7 +84,7 @@ def test_task_2_overriding_text():
 
 # === TASK 3-4 ======================================================================
 
-@pytest.mark.task_3_DeadlinedMetaReminder
+@pytest.mark.test_task_3_DeadlinedMetaReminder
 def test_task_3_DeadlinedMetaReminder():
     assert DEADLINED_REMINDERS_IMPORTED, \
         'Could not find module `deadlined_reminders`. Check the name is correct...'
@@ -112,7 +112,7 @@ def test_task_3_DeadlinedMetaReminder():
         f'`{ABSTRACT_METHOD_NAME}()` should be a method. Did you forget `self`?'
 
 
-@pytest.mark.task_4_DeadlinedReminder
+@pytest.mark.test_task_4_DeadlinedReminder
 def test_task_4_DeadlinedReminder():
     assert DEADLINED_REMINDERS_IMPORTED, \
         'Could not find module `deadlined_reminders`. Check the name is correct...'
@@ -143,7 +143,7 @@ def test_task_4_DeadlinedReminder():
 
 # === TASK 5 & 6 & 7 ================================================================
 
-@pytest.mark.task_5_concrete_subclass_stub
+@pytest.mark.test_task_5_concrete_subclass_stub
 def test_task_5_concrete_subclass_stub():
     test_task_4_DeadlinedReminder()
 
@@ -178,7 +178,7 @@ def test_task_5_concrete_subclass_stub():
         f'Incorrect date set in {CONCRETE_CLASS_NAME}.__init__(). Did you `parse()` it?'
 
 
-@pytest.mark.task_6_is_due
+@pytest.mark.test_task_6_is_due
 def test_task_6_is_due():
     test_task_5_concrete_subclass_stub()
 
@@ -210,7 +210,7 @@ def test_task_6_is_due():
         f'`{CONCRETE_CLASS_NAME}.is_due()` should return False for a future date ({future_date:%d/%m/%Y})'
 
 
-@pytest.mark.task_7_iter
+@pytest.mark.test_task_7_iter
 def test_task_7_iter():
     test_task_5_concrete_subclass_stub()
 
@@ -248,7 +248,7 @@ def test_task_7_iter():
 
 # === TASK 8 ========================================================================
 
-@pytest.mark.task_8_update_interface
+@pytest.mark.test_task_8_update_interface
 def test_task_8_update_interface(backup_reminders_csv):
     add_reminder_params = inspect.signature(database.add_reminder).parameters
     assert len(add_reminder_params) >= 2,\
@@ -284,7 +284,7 @@ def test_task_8_update_interface(backup_reminders_csv):
 
 # === TASK 9 ========================================================================
 
-@pytest.mark.task_9_accept_class
+@pytest.mark.test_task_9_accept_class
 def test_task_9_accept_class(backup_reminders_csv):
     test_task_6_is_due()
     test_task_7_iter()
@@ -324,7 +324,7 @@ def test_task_9_accept_class(backup_reminders_csv):
 
 # === TASK 10 ========================================================================
 
-@pytest.mark.task_10_subclasshook
+@pytest.mark.test_task_10_subclasshook
 def test_task_10_subclasshook(backup_reminders_csv):
     test_task_4_DeadlinedReminder()
 
@@ -356,7 +356,7 @@ def test_task_10_subclasshook(backup_reminders_csv):
 
 # === TASK 11 ========================================================================
 
-@pytest.mark.task_11_add_reminder_isinstance
+@pytest.mark.test_task_11_add_reminder_isinstance
 def test_task_11_add_reminder_isinstance():
     code_lines, starts_on = inspect.getsourcelines(database.add_reminder)
     EXISTS_LINE_WITH_issubclass = any('issubclass' in line for line in code_lines)
@@ -385,7 +385,7 @@ def test_task_11_add_reminder_isinstance():
 
 # === TASK 12 ========================================================================
 
-@pytest.mark.task_12_register_polite_reminder
+@pytest.mark.test_task_12_register_polite_reminder
 def test_task_12_register_polite_reminder():
     test_task_1_regular_class_implementation()
 
