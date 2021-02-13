@@ -3,6 +3,8 @@ from src.deadlined_reminders import DateReminder, DeadlinedReminder
 from src.external_reminders import EveningReminder
 from src.reminder import PoliteReminder
 
+DeadlinedReminder.register(PoliteReminder)
+
 
 def handle_input():
     choice = input("Choice: ")
@@ -41,11 +43,10 @@ def print_menu():
 
 
 def main():
-    DeadlinedReminder.register(PoliteReminder)
     print_menu()
     while handle_input():
         print_menu()
-        
+
 
 if __name__ == '__main__':
     main()
