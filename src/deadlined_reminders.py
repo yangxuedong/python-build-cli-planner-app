@@ -2,7 +2,7 @@ from abc import ABCMeta, abstractmethod
 from collections.abc import Iterable
 
 
-class DeadLinedMetaReminder(Iterable, metaclass=ABCMeta):
+class DeadlinedMetaReminder(Iterable, metaclass=ABCMeta):
 
     @abstractmethod
     def is_due(self):
