@@ -29,4 +29,4 @@ class DateReminder(DeadlinedReminder):
 
     def __iter__(self):
         formatted_date = self.date.isoformat()
-        return iter([text, formatted_date])
+        return iter([self.text, formatted_date])
