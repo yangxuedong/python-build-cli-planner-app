@@ -24,6 +24,7 @@ def handle_input():
 
     return True
 
+
 def print_menu():
     print()
     print('|--------------|')
@@ -38,11 +39,13 @@ def print_menu():
     print('2) Add a reminder')
     print('3) Exit')
 
+
 def main():
     DeadlinedReminder.register(PoliteReminder)
     print_menu()
     while handle_input():
         print_menu()
+        
 
 if __name__ == '__main__':
     main()
